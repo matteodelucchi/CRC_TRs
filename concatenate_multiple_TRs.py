@@ -49,11 +49,11 @@ def concatenate_TR_results(result_dir, out_file):
             outfile.write(line)
 
 if __name__ == "__main__":
-    result_dir_fav = "/home/matteo/polybox/MSc_ACLS/master_thesis/CRC_TRs/results/TRs_favorable_proteins_CRC"
-    output_tsv_file_fav = "/home/matteo/polybox/MSc_ACLS/master_thesis/CRC_TRs/results/TRs_favorable_proteins_CRC.tsv"
+    result_dir_fav = "/home/matteo/polybox/MSc_ACLS/master_thesis/CRC_TRs/results/TRs_favorable_proteins_CRC_sp"
+    output_tsv_file_fav = "/home/matteo/polybox/MSc_ACLS/master_thesis/CRC_TRs/results/TRs_favorable_proteins_CRC_sp.tsv"
     #output_pickle_file = "/home/matteo/polybox/MSc_ACLS/master_thesis/results/TRs_unfavorable_proteins_CRC.pkl"
-    result_dir_unfav = "/home/matteo/polybox/MSc_ACLS/master_thesis/CRC_TRs/results/TRs_unfavorable_proteins_CRC"
-    output_tsv_file_unfav = "/home/matteo/polybox/MSc_ACLS/master_thesis/CRC_TRs/results/TRs_unfavorable_proteins_CRC.tsv"
+    result_dir_unfav = "/home/matteo/polybox/MSc_ACLS/master_thesis/CRC_TRs/results/TRs_unfavorable_proteins_CRC_sp"
+    output_tsv_file_unfav = "/home/matteo/polybox/MSc_ACLS/master_thesis/CRC_TRs/results/TRs_unfavorable_proteins_CRC_sp.tsv"
 
     concatenate_TR_results(result_dir_fav, out_file=output_tsv_file_fav)
     concatenate_TR_results(result_dir_unfav, out_file=output_tsv_file_unfav)

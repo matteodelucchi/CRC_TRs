@@ -23,8 +23,8 @@ def retrieve_protein(output_file_path, genes):
                 Proteomes: Some proteomes have been (manually and algorithmically) selected as reference proteomes. 
                 They cover well-studied model organisms and other organisms of interest for biomedical research and phylogeny.
         """
-        #url = "https://www.uniprot.org/uniprot/?query=gene:{}&format=fasta&fil=organism:%22Homo%20sapiens%20(Human)%20[9606]%22%20AND%20reviewed:yes".format(gene)
-        url = "https://www.uniprot.org/uniprot/?query=organism%3A%22Homo+sapiens+%28Human%29+%5B9606%5D%22+AND+proteome%3Aup000005640+AND+gene%3A{}&format=fasta".format(gene)
+        url = "https://www.uniprot.org/uniprot/?query=gene:{}&format=fasta&fil=organism:%22Homo%20sapiens%20(Human)%20[9606]%22%20AND%20reviewed:yes".format(gene)
+        #url = "https://www.uniprot.org/uniprot/?query=organism%3A%22Homo+sapiens+%28Human%29+%5B9606%5D%22+AND+proteome%3Aup000005640+AND+gene%3A{}&format=fasta".format(gene)
 
         print("Retrieving proteins for gene: {}".format(gene))
         try:
@@ -67,8 +67,8 @@ if __name__ == "__main__":
     gene_file_name_unfav = "/home/matteo/polybox/MSc_ACLS/master_thesis/CRC_TRs/data/prognostic_colorectal_genes_unfavorable.tsv"
     gene_file_name_fav = "/home/matteo/polybox/MSc_ACLS/master_thesis/CRC_TRs/data/prognostic_colorectal_genes_favorable.tsv"
     # name of the file with all protein sequences
-    output_file_path_unfavorable = "/home/matteo/polybox/MSc_ACLS/master_thesis/CRC_TRs/data/unfavorable_proteins_CRC.fasta"
-    output_file_path_favorable = "/home/matteo/polybox/MSc_ACLS/master_thesis/CRC_TRs/data/favorable_proteins_CRC.fasta"
+    output_file_path_unfavorable = "/home/matteo/polybox/MSc_ACLS/master_thesis/CRC_TRs/data/unfavorable_proteins_CRC_sp.fasta"
+    output_file_path_favorable = "/home/matteo/polybox/MSc_ACLS/master_thesis/CRC_TRs/data/favorable_proteins_CRC_sp.fasta"
 
     ##########################################################################
     ######### Get Gene names
