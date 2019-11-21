@@ -1,6 +1,6 @@
 ## Project specific gitignores
-[Rr]esults/
-[Dd]ata/
+[Rr]esults/*
+[Dd]ata/*
 
 
 
