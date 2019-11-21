@@ -86,7 +86,7 @@ def find_protein_repeats(sequences_file, result_dir, pvalue_threshold = 0.05, di
         ##########################################################################
         # Getting TRs
 
-        denovo_list = seq.detect(denovo=True)
+        denovo_list = seq.detect(denovo=True, realignment="proPIP")
         for TR in denovo_list.repeats:
             TR.calculate_pvalues()
 
@@ -153,12 +153,12 @@ def find_protein_repeats(sequences_file, result_dir, pvalue_threshold = 0.05, di
         # create filename
         output_pickle_file = os.path.join(result_dir, seq_name + ".pkl")
         output_tsv_file = os.path.join(result_dir, seq_name + ".tsv")
+        # output_fasta_file = os.path.join(result_dir, seq_name + ".fasta")
 
         # save TR-file
         denovo_list_remastered.write(output_format="pickle", file=output_pickle_file)
         denovo_list_remastered.write(output_format="tsv", file=output_tsv_file)
-        #TODO save as fasta
-
+        # denovo_list_remastered.write(output_format='fasta', file=output_fasta_file)
 
 
 
@@ -181,12 +181,12 @@ if __name__ == "__main__":
     # AA reference
     # Input paths
     #working_dir = "/home/matteo/polybox/MSc_ACLS/master_thesis/data/proteom_reference/pickles"
-    sequences_file_unfav = "/home/matteo/polybox/MSc_ACLS/master_thesis/CRC_TRs/data/unfavorable_proteins_CRC_sp.fasta"
-    sequences_file_fav = "/home/matteo/polybox/MSc_ACLS/master_thesis/CRC_TRs/data/favorable_proteins_CRC_sp.fasta"
+    sequences_file_unfav = "./data/unfavorable_proteins_CRC_sp.fasta"
+    sequences_file_fav = "./data/favorable_proteins_CRC_sp.fasta"
 
     # Output paths
-    result_dir_unfav = "/home/matteo/polybox/MSc_ACLS/master_thesis/CRC_TRs/results/TRs_unfavorable_proteins_CRC_sp"
-    result_dir_fav = "/home/matteo/polybox/MSc_ACLS/master_thesis/CRC_TRs/results/TRs_favorable_proteins_CRC_sp"
+    result_dir_unfav = "./results/TRs_unfavorable_proteins_CRC_sp"
+    result_dir_fav = "./results/TRs_favorable_proteins_CRC_sp"
 
     # Thresholds for filtering
     #pvalue_threshold = 0.05

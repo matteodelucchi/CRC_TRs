@@ -31,10 +31,22 @@ if __name__ == "__main__":
     ##########################################################################
     ######### Set Arguments
     # name of the file with all protein sequences
-    output_file_path_wnt = "/home/matteo/polybox/MSc_ACLS/master_thesis/CRC_TRs/data/wnt_proteins_CRC_sp.fasta"
-    # Url from which the sequences are requested:
-    url = "https://www.uniprot.org/uniprot/?query=wnt%20AND%20reviewed:yes%20AND%20organism:%22Homo%20sapiens%20(Human)%20[9606]%22%20AND%20proteome:up000005640&format=fasta&sort=score"
+    output_file_path_wnt = "./data/wnt_proteins_CRC_sp.fasta"
+    output_file_path_nfkappab = "./data/nfkappab_proteins_CRC_sp.fasta"
+    output_file_path_pi3k_akt_pten = "./data/pi3k_akt_pten_proteins_CRC_sp.fasta"
+    output_file_path_ras_raf = "./data/ras_raf_proteins_CRC_sp.fasta"
+    output_file_path_gsk3beta = "./data/gsk3beta_proteins_CRC_sp.fasta"
 
+    # Url from which the sequences are requested:
+    url_wnt = "https://www.uniprot.org/uniprot/?query=wnt%20AND%20reviewed:yes%20AND%20organism:%22Homo%20sapiens%20(Human)%20[9606]%22%20AND%20proteome:up000005640&format=fasta&sort=score"
+    url_nfkappab = "https://www.uniprot.org/uniprot/?query=nf%20kappa%20b%20AND%20reviewed:yes%20AND%20organism:%22Homo%20sapiens%20(Human)%20[9606]%22%20AND%20proteome:up000005640&format=fasta&sort=score"
+    url_pi3k_akt_pten = "https://www.uniprot.org/uniprot/?query=PI3K%20AKT%20PTEN%20AND%20reviewed:yes%20AND%20organism:%22Homo%20sapiens%20(Human)%20[9606]%22%20AND%20proteome:up000005640&format=fasta&sort=score"
+    url_ras_raf = "https://www.uniprot.org/uniprot/?query=ras%20raf%20AND%20reviewed:yes%20AND%20organism:%22Homo%20sapiens%20(Human)%20[9606]%22%20AND%20proteome:up000005640&format=fasta&sort=score"
+    url_gsk3beta = "https://www.uniprot.org/uniprot/?query=gsk3b%20AND%20reviewed:yes%20AND%20organism:%22Homo%20sapiens%20(Human)%20[9606]%22%20AND%20proteome:up000005640&format=fasta&sort=score"
     ##########################################################################
     ######### Retrieve Protein Sequences
-    retrieve_protein_seq(output_file_path_wnt, url)
+    retrieve_protein_seq(output_file_path_wnt, url_wnt)
+    retrieve_protein_seq(output_file_path_nfkappab, url_nfkappab)
+    retrieve_protein_seq(output_file_path_pi3k_akt_pten, url_pi3k_akt_pten)
+    retrieve_protein_seq(output_file_path_ras_raf, url_ras_raf)
+    retrieve_protein_seq(output_file_path_gsk3beta, url_gsk3beta)

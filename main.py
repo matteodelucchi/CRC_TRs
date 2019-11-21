@@ -42,14 +42,22 @@ from concatenate_multiple_TRs import concatenate_TR_results
 ##############################################################
 ### Filter for Tandem Repeats
 # Defining Paths and Parameters
-sequences_file_unfav = "/home/matteo/polybox/MSc_ACLS/master_thesis/CRC_TRs/data/unfavorable_proteins_CRC_sp.fasta"
-sequences_file_fav = "/home/matteo/polybox/MSc_ACLS/master_thesis/CRC_TRs/data/favorable_proteins_CRC_sp.fasta"
-sequences_file_wnt = "/home/matteo/polybox/MSc_ACLS/master_thesis/CRC_TRs/data/wnt_proteins_CRC_sp.fasta"
+sequences_file_unfav = "./data/unfavorable_proteins_CRC_sp.fasta"
+sequences_file_fav = "./data/favorable_proteins_CRC_sp.fasta"
+sequences_file_wnt = "./data/wnt_proteins_CRC_sp.fasta"
+sequences_file_nfkappab = "./data/nfkappab_proteins_CRC_sp.fasta"
+sequences_file_pi3k_akt_pten = "./data/pi3k_akt_pten_proteins_CRC_sp.fasta"
+sequences_file_ras_raf = "./data/ras_raf_proteins_CRC_sp.fasta"
+sequences_file_gsk3beta = "./data/gsk3beta_proteins_CRC_sp.fasta"
 
 # Output paths
-result_dir_unfav = "/home/matteo/polybox/MSc_ACLS/master_thesis/CRC_TRs/results/TRs_unfavorable_proteins_CRC_sp_l100"
-result_dir_fav = "/home/matteo/polybox/MSc_ACLS/master_thesis/CRC_TRs/results/TRs_favorable_proteins_CRC_sp_l100"
-result_dir_wnt = "/home/matteo/polybox/MSc_ACLS/master_thesis/CRC_TRs/results/TRs_Wnt_proteins_CRC_sp_l100"
+result_dir_unfav = "./results/TRs_unfavorable_proteins_CRC_sp_l100"
+result_dir_fav = "./results/TRs_favorable_proteins_CRC_sp_l100"
+result_dir_wnt = "./results/TRs_Wnt_proteins_CRC_sp_l100"
+result_dir_nfkappab = "./results/TRs_nfkappab_proteins_CRC_sp_l100"
+result_dir_pi3k_akt_pten = "./results/TRs_pi3k_akt_pten_proteins_CRC_sp_l100"
+result_dir_ras_raf = "./results/TRs_ras_raf_proteins_CRC_sp_l100"
+result_dir_gsk3beta = "./results/TRs_gsk3beta_proteins_CRC_sp_l100"
 
 # Thresholds for filtering
 #pvalue_threshold = 0.05
@@ -61,6 +69,10 @@ result_dir_wnt = "/home/matteo/polybox/MSc_ACLS/master_thesis/CRC_TRs/results/TR
 print(return_duplicate_proteins(sequences_file=sequences_file_unfav))
 print(return_duplicate_proteins(sequences_file=sequences_file_fav))
 print(return_duplicate_proteins(sequences_file=sequences_file_wnt))
+print(return_duplicate_proteins(sequences_file=sequences_file_nfkappab))
+print(return_duplicate_proteins(sequences_file=sequences_file_pi3k_akt_pten))
+print(return_duplicate_proteins(sequences_file=sequences_file_ras_raf))
+print(return_duplicate_proteins(sequences_file=sequences_file_gsk3beta))
 
 # Call TRAL
 find_protein_repeats(sequences_file=sequences_file_unfav,
@@ -69,16 +81,36 @@ find_protein_repeats(sequences_file=sequences_file_fav,
                      result_dir=result_dir_fav, l_threshold=100)
 find_protein_repeats(sequences_file=sequences_file_wnt,
                      result_dir=result_dir_wnt, l_threshold=100)
+find_protein_repeats(sequences_file=sequences_file_nfkappab,
+                     result_dir=result_dir_wnt, l_threshold=100)
+find_protein_repeats(sequences_file=sequences_file_pi3k_akt_pten,
+                     result_dir=result_dir_wnt, l_threshold=100)
+find_protein_repeats(sequences_file=sequences_file_ras_raf,
+                     result_dir=result_dir_wnt, l_threshold=100)
+find_protein_repeats(sequences_file=sequences_file_gsk3beta,
+                     result_dir=result_dir_wnt, l_threshold=100)
 
 ##############################################################
 ### Concatenate Multiple TR in one file
-result_dir_fav = "/home/matteo/polybox/MSc_ACLS/master_thesis/CRC_TRs/results/TRs_favorable_proteins_CRC_sp_l100"
-output_tsv_file_fav = "/home/matteo/polybox/MSc_ACLS/master_thesis/CRC_TRs/results/TRs_favorable_proteins_CRC_sp_l100.tsv"
-result_dir_unfav = "/home/matteo/polybox/MSc_ACLS/master_thesis/CRC_TRs/results/TRs_unfavorable_proteins_CRC_sp_l100"
-output_tsv_file_unfav = "/home/matteo/polybox/MSc_ACLS/master_thesis/CRC_TRs/results/TRs_unfavorable_proteins_CRC_sp_l100.tsv"
-result_dir_wnt = "/home/matteo/polybox/MSc_ACLS/master_thesis/CRC_TRs/results/TRs_Wnt_proteins_CRC_sp_l100"
-output_tsv_file_wnt = "/home/matteo/polybox/MSc_ACLS/master_thesis/CRC_TRs/results/TRs_Wnt_proteins_CRC_sp_l100.tsv"
+result_dir_fav = "./results/TRs_favorable_proteins_CRC_sp_l100"
+output_tsv_file_fav = "./results/TRs_favorable_proteins_CRC_sp_l100.tsv"
+result_dir_unfav = "./results/TRs_unfavorable_proteins_CRC_sp_l100"
+output_tsv_file_unfav = "./results/TRs_unfavorable_proteins_CRC_sp_l100.tsv"
+result_dir_wnt = "./results/TRs_Wnt_proteins_CRC_sp_l100"
+output_tsv_file_wnt = "./results/TRs_Wnt_proteins_CRC_sp_l100.tsv"
+result_dir_nfkappab = "./results/TRs_nfkappab_proteins_CRC_sp_l100"
+output_tsv_file_nfkappab = "./results/TRs_nfkappab_proteins_CRC_sp_l100.tsv"
+result_dir_pi3k_akt_pten = "./results/TRs_pi3k_akt_pten_proteins_CRC_sp_l100"
+output_tsv_file_pi3k_akt_pten = "./results/TRs_pi3k_akt_pten_proteins_CRC_sp_l100.tsv"
+result_dir_ras_raf = "./results/TRs_ras_raf_proteins_CRC_sp_l100"
+output_tsv_file_ras_raf = "./results/TRs_ras_raf_proteins_CRC_sp_l100.tsv"
+result_dir_gsk3beta = "./results/TRs_gsk3beta_proteins_CRC_sp_l100"
+output_tsv_file_gsk3beta = "./results/TRs_gsk3beta_proteins_CRC_sp_l100.tsv"
 
 concatenate_TR_results(result_dir_fav, out_file=output_tsv_file_fav)
 concatenate_TR_results(result_dir_unfav, out_file=output_tsv_file_unfav)
 concatenate_TR_results(result_dir_wnt, out_file=output_tsv_file_wnt)
+concatenate_TR_results(result_dir_nfkappab, out_file=output_tsv_file_nfkappab)
+concatenate_TR_results(result_dir_pi3k_akt_pten, out_file=output_tsv_file_pi3k_akt_pten)
+concatenate_TR_results(result_dir_ras_raf, out_file=output_tsv_file_ras_raf)
+concatenate_TR_results(result_dir_gsk3beta, out_file=output_tsv_file_gsk3beta)
