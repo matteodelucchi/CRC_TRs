@@ -44,7 +44,7 @@ def return_duplicate_proteins(sequences_file):
     return dupes
 
 
-def find_protein_repeats(sequences_file, result_dir, pvalue_threshold = 0.05, divergence_threshold = 0.1, n_threshold = 2.5, l_threshold = 3):
+def find_protein_repeats(sequences_file, result_dir, pvalue_threshold = 0.05, divergence_threshold = 0.1, n_threshold = 2.5, l_threshold = 100):
     """
     Finds tandem repeats (TRs) in the protein sequences provided in 'sequence_file'.
     Filters the TRs according to the thresholds.
